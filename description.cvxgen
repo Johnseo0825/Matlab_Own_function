@@ -1,0 +1,30 @@
+# Produced by CVXGEN, 2016-06-02 03:30:17 -0400.
+# CVXGEN is Copyright (C) 2006-2012 Jacob Mattingley, jem@cvxgen.com.
+# The code in this file is Copyright (C) 2006-2012 Jacob Mattingley.
+# CVXGEN, or solvers produced by CVXGEN, cannot be used for commercial
+# applications without prior written permission from Jacob Mattingley.
+
+# Filename: description.cvxgen.
+# Description: A description of the CVXGEN problem.
+
+dimensions
+
+end
+
+parameters
+  A (3,10)
+  b (3)
+  Q (10,10) psd
+  c (10)
+end
+
+variables
+  x (10)
+end
+
+minimize
+  quad(x, Q)+c'*x
+subject to
+  A*x == b
+  0<=x<=1
+end
